@@ -1,0 +1,18 @@
+{
+  "name": "hookbot",
+  "version": "1.0.0",
+  "description": "Forwards webhooks to Discord.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "8.2.0"
+  },
+  "author": "tyrone.trevorrow@marcopolee.com",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3"
+  }
+}
