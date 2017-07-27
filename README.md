@@ -1,9 +1,20 @@
 # Hookbot
 
-Bugsnag doesn't support Discord webhooks. Hookbot forwards Bugsnag webooks to
-Discord ones, using Discord's rich embeds formatting. Recommend hosting this on
-Heroku.
+Bugsnag and Buddybuild don't support Discord webhooks. Hookbot forwards their
+webooks to Discord ones, using Discord's rich embeds formatting. Recommend
+hosting this on Heroku.
+
+# Setup
 
 Environment variables required:
-* `DISCORD_WEBHOOK`: The Discord webhook url from your Discord channel
+* `BUGSNAG_WEBHOOK`: The webhook url from your Discord channel for Bugsnag messages
+* `BUDDYBUILD_WEBHOOK`: The webhook url from your Discord channel for Buddybuild messages
 * `PORT`: Usually provided by heroku.
+
+# What does this look like?
+
+### Buddybuild
+![Buddybuild](/screenshots/buddybuild.png)
+
+### Bugsnag
+![Bugsnag](/screenshots/bugsnag.png)
