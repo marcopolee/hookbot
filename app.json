@@ -1,0 +1,17 @@
+{
+  "name": "Hookbot",
+  "description": "Forwards webhooks to Discord",
+  "keywords": ["webhook", "buddybuild", "bugsnag", "discord"],
+  "website": "https://github.com/marcopolee/hookbot",
+  "repository": "https://github.com/marcopolee/hookbot",
+  "env": {
+    "BUGSNAG_WEBHOOK": {
+      "description": "The webhook url from your Discord channel for Bugsnag messages",
+      "required": false
+    },
+    "BUDDYBUILD_WEBHOOK": {
+      "description": "The webhook url from your Discord channel for Buddybuild messages",
+      "required": false
+    }
+  }
+}

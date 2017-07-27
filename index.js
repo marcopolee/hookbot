@@ -18,7 +18,7 @@ assertEnvVariable("BUDDYBUILD_WEBHOOK")
 app.use(bodyParser.json());
 
 // Bugsnag
-app.post('/webhooks/bugsnag', (req, res) => {
+function bugsnagHandler(req, res) {
     var bug = req.body;
     try {
         var fields = [];
@@ -64,7 +64,11 @@ app.post('/webhooks/bugsnag', (req, res) => {
         res.status(500);
         res.end();
     }
-});
+}
+
+if (bugsnagWebhook) {
+    app.post('/webhooks/bugsnag', bugsnagHandler);
+}
 
 // Hipchat supports: yellow, green, red, purple, gray, random.
 function convertHipchatColorToDiscord(color) {
@@ -114,9 +118,8 @@ function convertHipchatAttrsToDiscordFields(attributes) {
 }
 
 // Buddybuild
-app.all('/webhooks/buddybuild', (req, res) => {
+function buddybuildHandler(req, res) {
     const msg = req.body;
-    console.log(JSON.stringify(msg));
     try {
         const color = convertHipchatColorToDiscord(msg.color.toLowerCase());
         const message = {
@@ -147,7 +150,11 @@ app.all('/webhooks/buddybuild', (req, res) => {
         res.status(500);
         res.end();
     }
-});
+}
+
+if (buddybuildWebhook) {
+    app.all('/webhooks/buddybuild', buddybuildHandler);
+}
 
 // Default
 
